@@ -19,6 +19,10 @@ export default class ContaBancaria {
     public getNumero() {
         return this.numero;
     }
+    public setNumero(numero:  string):  string {
+        this.numero = numero
+        return this.numero;
+    }
     public getSaldo() {
         return this.saldo;
     }
