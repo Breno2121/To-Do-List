@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Index</title>
+</head>
+
+<body onkeypress="capturartecla(event)">
+    <header>
+        <h1>Desenvolvimento Sistemas 2024</h1>
+        <nav>
+            <ul>
+                <li><a href="">Espaço estudante</a>
+                </li>
+                <li><a href="">Ambiente Virtual</a>
+                </li>
+                <li><a href="">Contato</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="main">
+            <h2>Seção de Introdução</h2>
+            <p>
+                Este é um codigo nivel <strong>hard</strong>, que so os
+                fodoes demais entenderao!!!
+            </p>
+            <img src="livros.jpg" alt="">
+        </section>
+
+        <section class="section-main section-cursos">
+            <h1>Unidades Curriculares</h1>
+
+            <div class="div-conteudo">
+                <div class="div-item">
+                    <h2>Logica de programação</h2>
+                    <p>Unidades curricular basica para os cursos de desenvolvimento</p>
+                </div>
+
+                <div class="div-item">
+                    <h2>Programação de aplicativos</h2>
+                    <p>Unidade curricular intermediaria para os cursos de desenvolvimento.</p>
+                </div>
+
+                <div class="div-item">
+                    <H2>Desenvolvimento de sistemas</H2>
+                    <p>Unidade curricular avancada para os cursos de desenvolvimento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-main section-contato">
+            <h2>Contato</h2>
+            <form action="">
+                <label for="name">Nome Completo:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="message">Mensagem: </label>
+                <textarea name="message" id="message" rows="5" required></textarea>
+
+                <button type="submit" onclick="pegarinformacoes(event)" id="Enviar">Enviar</button>
+            </form>
+        </section>
+
+        <section class="section-main section-cursos">
+            <h2>Comentarios</h2>
+            <div class="Comentarios" id="Comentarios">
+                <div class="comentario-item">
+                    <span>Breno - <strong>jose@gmail.com</strong></span>
+                    <p>Hoje o dia foi muito bonito!!!</p>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+    <script src="scripts/index.js"></script>
+
+</body>
+
+</html>
