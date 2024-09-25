@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+<link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>ToDo list</h1>
+        <div class="group-input">
+            <input type="text" id="tarefa-text" placeholder="Adicionar nova tarefa">
+            <button id="add-tarefa" onclick="adicionartarefa()"><span class="material-symbols-outlined">
+                add
+                </span></button>
+        </div>
+        
+        <ul id="lista-tarefa">
+            <li>
+                <span class="completed">Tarefa numero 1</span>
+                <div>
+                    <button class="check"><span class="material-symbols-outlined">
+                        done_all
+                        </span></button>
+                    <button class="edit"><span class="material-symbols-outlined">
+                        stylus
+                        </span></button>
+                    <button class="excluir"><span class="material-symbols-outlined">
+                        delete
+                        </span></button>
+                </div>
+            </li>
+            <li>
+                <span class="completed">Tarefa numero 1</span>
+                <div>
+                    <button class="check"><span class="material-symbols-outlined">
+                        done_all
+                        </span></button>
+                    <button class="edit"><span class="material-symbols-outlined">
+                        stylus
+                        </span></button>
+                    <button class="excluir"><span class="material-symbols-outlined">
+                        delete
+                        </span></button>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+    
+
+<script src="scripts/index.js"></script>
+</body>
+</html>
