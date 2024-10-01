@@ -53,7 +53,6 @@ function render() {
         deletar.classList.add("material-symbols-outlined");
         deletar.setAttribute("onclick", `deletarTarefa(${tarefas[i].id})`);
 
-        
         const div = document.createElement("div");
 
         div.appendChild(concluir)
