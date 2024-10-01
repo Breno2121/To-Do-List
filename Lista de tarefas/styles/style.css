@@ -32,6 +32,7 @@ body {
 .container .grupo-input {
     display: flex;
     flex-direction: row;
+    column-gap: 10px;
 }
 
 @media (max-width: 500px){
@@ -55,7 +56,6 @@ body {
 
 #add-tarefa {
     display: flex;
-    margin-left: 10px;
     padding: 10px 20px;
     background-color: #28a745;
     color: #fff;
