@@ -3,25 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <title>Todo List</title>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body>
     <div class="container">
       <h1>ToDo List</h1>
       <div class="grupo-input">
-        <input type="text" id="tarefa-text" >
-        <button id="add-tarefa" >Adicionar</button>
+        <input type="text" id="tarefa-text" onkeypress="addPeloEnter(event)">
+        <button id="add-tarefa" onclick="adicionarTarefa()">Adicionar</button>
       </div>
 
       <ul id="lista-tarefa">
-        <li>
-          <span>TAREFA 01</span>
-          <div>
-            <button class="check">Concluir</button>
-            <button class="edit">Editar</button>
-            <button class="delete">Deletar</button>
-          </div>
-        </li>
+       
       </ul>
     </div>
 
