@@ -118,6 +118,7 @@ button:hover {
 .card .dados {
   display: flex;
   flex-direction: column;
+  align-items: center;
   
 }
 
@@ -130,6 +131,11 @@ font-weight: bold;
 .card .dados span {
   font-family: cursive;
   font-size: 15px;
+  }
+
+  .card .botao-card {
+    display: flex;
+    align-items: center;
   }
 
   .card .botao-card button {
