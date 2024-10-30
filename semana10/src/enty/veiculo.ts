@@ -37,5 +37,4 @@ export default class Veiculo {
         return this.imagem
     }
 
-
 }

@@ -11,16 +11,15 @@ document.getElementById("buton")?.addEventListener("click", (event: MouseEvent) 
     var anoinp = document.getElementById("ano") as HTMLInputElement;
     var precoinp = document.getElementById("preco") as HTMLInputElement;
     var imageminp = document.getElementById("imagem") as HTMLInputElement;
-
-    // const novaCarro = {
-    //     modelo: modeloinp.value,
-    //     cor: corinp.value,
-    //     ano: anoinp.value,
-    //     preco: precoinp.value,
-    //     imagem: imageminp.value
-    //}
     
 const novaCarro = new Veiculo (modeloinp.value, corinp.value, Number(anoinp.value), Number(precoinp.value), imageminp.value)
+
+window.onload = async () => {
+  const veiculo = await (window as any).bancoAPI.findAll();
+  for( var i = 0; i < veiculo.length; i++){
+    const veiculos = new Veiculo (veiculo[i].modelo, veiculo[i].cor, veiculo[i].ano, veiculo[i].preco, veiculo[i].imagem, veiculo[i].id);
+  }
+}
 
     listaVeiculos.push (novaCarro);
     (window as any).bancoAPI.createVeiculo(novaCarro);
