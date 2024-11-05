@@ -1,7 +1,7 @@
 import Veiculo from './enty/veiculo';
 import './index.css';
 
-var listaVeiculos: any = [];
+var listaVeiculos: Veiculo[] = [];
 
 document.getElementById("buton")?.addEventListener("click", (event: MouseEvent) => {
     event.preventDefault();
@@ -30,7 +30,11 @@ window.onload = async () => {
     precoinp.value = ""
     imageminp.value = ""
 
-var conteudo = document.getElementById("conteudo");
+    render();
+});
+
+function render (){
+  var conteudo = document.getElementById("conteudo");
 conteudo.innerHTML = "";
 
 for(var i = 0; i < listaVeiculos.length; i++){
@@ -44,9 +48,20 @@ for(var i = 0; i < listaVeiculos.length; i++){
       <span>${listaVeiculos[i].getpreco()}</span>
     </div>
     <div class="botao-card">
-      <button id="botao-ver">Ver</button>
-      <button id="botao-deletar">Deletar</button>
+      <button id="botao-ver" data-id="${listaVeiculos[i].getid()}">Ver</button>
+      <button id="botao-deletar" onclick="deletarVeiculo('${listaVeiculos[i].getid()}')">Deletar</button>
     </div>
   </div>`;
 }
-})
+}
+
+function deletarVeiculo(id: String){
+  //CHAMA A FUNCAO DELETAR DO PRELOAD NO CONTEXTO DE'bancoAPI';
+  (window as any).bancoAPI.deletarVeiculo(id);
+
+  //FILTRA TODOS OS ITENS COM ID DIFERENTE DO ID QUE VEIO POR PARAMENTRO
+  listaVeiculos = listaVeiculos.filter(veiculo => veiculo.getid() !== id);
+  render()
+}
+
+(window as any).deletarVeiculo = deletarVeiculo;

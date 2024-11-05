@@ -62,4 +62,17 @@ export default class VeiculoRepository {
             this.connection = null;
         }
     }
+
+    async delete (id: String) {
+        try {
+            this.connection.connect();
+            const sql = "DELETE FROM veiculo WHERE id = $1";
+            await this.connection.query(sql, [id])
+        } catch (error) {
+            console.log(error)
+        } finally {
+            this.connection.end()
+            this.connection = null;
+        }
+    }
 }

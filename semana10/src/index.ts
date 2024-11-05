@@ -26,7 +26,7 @@ const createWindow = (): void => {
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+ // mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
@@ -62,12 +62,14 @@ new VeiculoRepository().save(novoveiculo);
 
 })
 
-
-
 ipcMain.handle('findAll', async () => {
   return new VeiculoRepository().findAll();
 })
 
 ipcMain.handle('findbyid', async (_: any, id: any) => {
   return new VeiculoRepository().findbyid(id);
+})
+
+ipcMain.handle('deletarVeiculo', async (_: any, id: String) => {
+  await new VeiculoRepository().delete(id);
 })
