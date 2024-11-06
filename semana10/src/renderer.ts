@@ -33,7 +33,6 @@ window.onload = async () => {
   }
   render();
 }
-
 function render (){
   var conteudo = document.getElementById("conteudo");
 conteudo.innerHTML = "";
