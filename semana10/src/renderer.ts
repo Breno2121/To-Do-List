@@ -13,25 +13,26 @@ document.getElementById("buton")?.addEventListener("click", (event: MouseEvent) 
     var imageminp = document.getElementById("imagem") as HTMLInputElement;
     
 const novaCarro = new Veiculo (modeloinp.value, corinp.value, Number(anoinp.value), Number(precoinp.value), imageminp.value)
+listaVeiculos.push (novaCarro);
+(window as any).bancoAPI.createVeiculo(novaCarro)
+render();
 
+modeloinp.value = ""
+corinp.value = ""
+anoinp.value = ""
+precoinp.value = ""
+imageminp.value = ""
+
+})
 window.onload = async () => {
   const veiculo = await (window as any).bancoAPI.findAll();
   for( var i = 0; i < veiculo.length; i++){
     const veiculos = new Veiculo (veiculo[i].modelo, veiculo[i].cor, veiculo[i].ano, veiculo[i].preco, veiculo[i].imagem, veiculo[i].id);
+  
+    listaVeiculos.push (veiculos);
   }
+  render();
 }
-
-    listaVeiculos.push (novaCarro);
-    (window as any).bancoAPI.createVeiculo(novaCarro);
-
-    modeloinp.value = ""
-    corinp.value = ""
-    anoinp.value = ""
-    precoinp.value = ""
-    imageminp.value = ""
-
-    render();
-});
 
 function render (){
   var conteudo = document.getElementById("conteudo");
@@ -48,7 +49,7 @@ for(var i = 0; i < listaVeiculos.length; i++){
       <span>${listaVeiculos[i].getpreco()}</span>
     </div>
     <div class="botao-card">
-      <button id="botao-ver" data-id="${listaVeiculos[i].getid()}">Ver</button>
+      <button id="botao-ver" onclick="irpagdetalhes('${listaVeiculos[i].getid()}')">Ver</button>
       <button id="botao-deletar" onclick="deletarVeiculo('${listaVeiculos[i].getid()}')">Deletar</button>
     </div>
   </div>`;
@@ -64,4 +65,9 @@ function deletarVeiculo(id: String){
   render()
 }
 
+function irpagdetalhes(id: String) {
+  (window as any).bancoAPI.irpagdetalhes(id);
+}
+
 (window as any).deletarVeiculo = deletarVeiculo;
+(window as any).irpagdetalhes = irpagdetalhes;
